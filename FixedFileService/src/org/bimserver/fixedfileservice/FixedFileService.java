@@ -18,8 +18,6 @@ import org.bimserver.plugins.PluginConfiguration;
 import org.bimserver.plugins.SchemaName;
 import org.bimserver.plugins.services.BimBotAbstractService;
 
-import sun.nio.ch.FileKey;
-
 public class FixedFileService extends BimBotAbstractService {
 	@Override
 	public BimBotsOutput runBimBot(BimBotsInput input, SObjectType settings) throws BimBotsException {
