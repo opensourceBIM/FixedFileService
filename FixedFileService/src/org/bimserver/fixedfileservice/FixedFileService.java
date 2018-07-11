@@ -18,6 +18,8 @@ import org.bimserver.plugins.PluginConfiguration;
 import org.bimserver.plugins.SchemaName;
 import org.bimserver.plugins.services.BimBotAbstractService;
 
+import sun.nio.ch.FileKey;
+
 public class FixedFileService extends BimBotAbstractService {
 	@Override
 	public BimBotsOutput runBimBot(BimBotsInput input, SObjectType settings) throws BimBotsException {
@@ -31,7 +33,7 @@ public class FixedFileService extends BimBotAbstractService {
 	
 	@Override
 	public ObjectDefinition getSettingsDefinition() {
-		ObjectDefinition settingsDefinition = super.getSettingsDefinition();
+		ObjectDefinition settingsDefinition = StoreFactory.eINSTANCE.createObjectDefinition();
 
 		PrimitiveDefinition byteArrayType = StoreFactory.eINSTANCE.createPrimitiveDefinition();
 		byteArrayType.setType(PrimitiveEnum.BYTE_ARRAY);
@@ -40,9 +42,10 @@ public class FixedFileService extends BimBotAbstractService {
 		stringType.setType(PrimitiveEnum.STRING);
 
 		ParameterDefinition contentTypeParameter = StoreFactory.eINSTANCE.createParameterDefinition();
-		contentTypeParameter.setName("contentType");
+		contentTypeParameter.setName("Content Type");
 		contentTypeParameter.setDescription("ContentType to be used for the returned result");
 		contentTypeParameter.setRequired(true);
+		contentTypeParameter.setIdentifier("contentType");
 		contentTypeParameter.setType(stringType);
 		
 		StringType contentTypeDefaultValue = StoreFactory.eINSTANCE.createStringType();
@@ -52,10 +55,11 @@ public class FixedFileService extends BimBotAbstractService {
 		settingsDefinition.getParameters().add(contentTypeParameter);
 		
 		ParameterDefinition fileParameter = StoreFactory.eINSTANCE.createParameterDefinition();
-		fileParameter.setName("file");
+		fileParameter.setName("File");
 		fileParameter.setDescription("Fixed file to be served as a result of running the service");
 		fileParameter.setRequired(true);
 		fileParameter.setType(byteArrayType);
+		fileParameter.setIdentifier("file");
 		
 		ByteArrayType defaultValue = StoreFactory.eINSTANCE.createByteArrayType();
 		try {

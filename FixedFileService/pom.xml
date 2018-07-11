@@ -7,7 +7,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<timestamp>${maven.build.timestamp}</timestamp>
-https://github.com/opensourceBIM/FixedFileService.git		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
+		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
 	</properties>
 	<description>BIMserver service that returns a fixed file, configurable in the settings</description>
 	<build>
@@ -110,6 +110,12 @@ https://github.com/opensourceBIM/FixedFileService.git		<maven.build.timestamp.fo
 								<goals>
 									<goal>sign</goal>
 								</goals>
+								<configuration>
+									<gpgArguments>
+										<arg>--pinentry-mode</arg>
+										<arg>loopback</arg>
+									</gpgArguments>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>
@@ -151,7 +157,7 @@ https://github.com/opensourceBIM/FixedFileService.git		<maven.build.timestamp.fo
 		<dependency>
 			<groupId>org.opensourcebim</groupId>
 			<artifactId>shared</artifactId>
-			<version>1.5.101</version>
+			<version>1.5.102</version>
 		</dependency>
 	</dependencies>
 	<distributionManagement>
