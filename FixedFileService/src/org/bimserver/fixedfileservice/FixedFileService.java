@@ -3,6 +3,7 @@ package org.bimserver.fixedfileservice;
 import java.io.IOException;
 import java.nio.file.Files;
 
+import org.bimserver.bimbots.BimBotContext;
 import org.bimserver.bimbots.BimBotsException;
 import org.bimserver.bimbots.BimBotsInput;
 import org.bimserver.bimbots.BimBotsOutput;
@@ -20,7 +21,7 @@ import org.bimserver.plugins.services.BimBotAbstractService;
 
 public class FixedFileService extends BimBotAbstractService {
 	@Override
-	public BimBotsOutput runBimBot(BimBotsInput input, SObjectType settings) throws BimBotsException {
+	public BimBotsOutput runBimBot(BimBotsInput input, BimBotContext bimBotContext, SObjectType settings) throws BimBotsException {
 		PluginConfiguration pluginConfiguration = new PluginConfiguration(settings);
 		byte[] bytes = pluginConfiguration.getByteArray("file");
 		BimBotsOutput output = new BimBotsOutput(SchemaName.BCF_ZIP_2_0, bytes);
