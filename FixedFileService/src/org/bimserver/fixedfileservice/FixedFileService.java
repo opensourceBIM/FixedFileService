@@ -7,7 +7,6 @@ import org.bimserver.bimbots.BimBotContext;
 import org.bimserver.bimbots.BimBotsException;
 import org.bimserver.bimbots.BimBotsInput;
 import org.bimserver.bimbots.BimBotsOutput;
-import org.bimserver.interfaces.objects.SObjectType;
 import org.bimserver.models.store.ByteArrayType;
 import org.bimserver.models.store.ObjectDefinition;
 import org.bimserver.models.store.ParameterDefinition;
@@ -21,8 +20,7 @@ import org.bimserver.plugins.services.BimBotAbstractService;
 
 public class FixedFileService extends BimBotAbstractService {
 	@Override
-	public BimBotsOutput runBimBot(BimBotsInput input, BimBotContext bimBotContext, SObjectType settings) throws BimBotsException {
-		PluginConfiguration pluginConfiguration = new PluginConfiguration(settings);
+	public BimBotsOutput runBimBot(BimBotsInput input, BimBotContext bimBotContext, PluginConfiguration pluginConfiguration) throws BimBotsException {
 		byte[] bytes = pluginConfiguration.getByteArray("file");
 		BimBotsOutput output = new BimBotsOutput(SchemaName.BCF_ZIP_2_0, bytes);
 		output.setTitle("FixedFileService");
