@@ -29,7 +29,7 @@ public class FixedFileService extends BimBotAbstractService {
 	}
 	
 	@Override
-	public ObjectDefinition getSettingsDefinition() {
+	public ObjectDefinition getUserSettingsDefinition() {
 		ObjectDefinition settingsDefinition = StoreFactory.eINSTANCE.createObjectDefinition();
 
 		PrimitiveDefinition byteArrayType = StoreFactory.eINSTANCE.createPrimitiveDefinition();
