@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opensourcebim</groupId>
   <artifactId>fixedfileservice</artifactId>
-  <version>0.0.41</version>
+  <version>0.0.41-SNAPSHOT</version>
   <name>FixedFileService</name>
   <description>BIMserver service that returns a fixed file, configurable in the settings</description>
   <url>https://github.com/opensourceBIM/FixedFileService</url>
@@ -27,8 +28,8 @@
   <scm>
     <connection>scm:git:https://github.com/opensourceBIM/FixedFileService.git</connection>
     <developerConnection>scm:git:https://github.com/opensourceBIM/FixedFileService.git</developerConnection>
-    <url>https://github.com/opensourceBIM/FixedFileService.git</url>
     <tag>fixedfileservice-0.0.41</tag>
+    <url>https://github.com/opensourceBIM/FixedFileService.git</url>
   </scm>
   <issueManagement>
     <system>GitHub</system>
@@ -53,7 +54,7 @@
     <dependency>
       <groupId>org.opensourcebim</groupId>
       <artifactId>shared</artifactId>
-      <version>1.5.169</version>
+      <version>1.5.170-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <repositories>
